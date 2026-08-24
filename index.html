@@ -5,34 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sirat Oladipupo — DekreativeQueen</title>
     <meta name="description" content="I create. I build. I am still becoming. — Sirat Oladipupo, creative, designer & content creator." />
-    <!-- Force light mode -->
-    <meta name="color-scheme" content="light" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <style>
-        /* ----- FORCE LIGHT MODE ----- */
-        :root {
-            color-scheme: light !important;
-        }
-        html {
-            color-scheme: light !important;
-        }
-        /* Override any system dark-mode preferences */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                color-scheme: light !important;
-            }
-            html {
-                color-scheme: light !important;
-            }
-            body {
-                background: #F6EEE7 !important;
-                color: #3C2E32 !important;
-            }
-        }
-
-        /* ----- RESET & BASE ----- */
+        /* ----- NO color-scheme overrides – pure light design ----- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -45,7 +22,7 @@
         }
         body {
             margin: 0;
-            background: #F6EEE7;
+            background: #F6EEE7; /* warm beige */
             color: #3C2E32;
             font-family: "Inter", sans-serif;
             line-height: 1.6;
@@ -83,7 +60,7 @@
             outline-offset: 3px;
         }
 
-        /* ----- VARIABLES (light only) ----- */
+        /* ----- VARIABLES (light & dark coexist – we set explicit colors) ----- */
         :root {
             --ink: #160C13;
             --ink-soft: #241620;
@@ -447,6 +424,7 @@
             }
         }
 
+        /* ----- MOBILE MENU (dark) ----- */
         #mobilemenu {
             position: fixed;
             inset: 0;
@@ -501,7 +479,7 @@
             cursor: pointer;
         }
 
-        /* ----- RULER ----- */
+        /* ----- RULER (dark-aware) ----- */
         #ruler {
             position: fixed;
             left: 16px;
@@ -950,7 +928,7 @@
             }
         }
 
-        /* ----- IDENTITY marquee ----- */
+        /* ----- IDENTITY (dark) ----- */
         #identity {
             background: var(--ink);
             color: var(--text-i);
@@ -1092,7 +1070,7 @@
             margin-top: 18px;
         }
 
-        /* ----- BUILDING IN PUBLIC ----- */
+        /* ----- BUILDING IN PUBLIC (dark) ----- */
         #public-build {
             background: var(--ink);
             color: var(--text-i);
@@ -1315,7 +1293,7 @@
             color: var(--text-dim);
         }
 
-        /* ----- FINAL CTA ----- */
+        /* ----- FINAL CTA (dark) ----- */
         #final {
             background: var(--ink);
             color: var(--text-i);
@@ -1375,7 +1353,7 @@
             }
         }
 
-        /* ----- FOOTER ----- */
+        /* ----- FOOTER (dark) ----- */
         footer {
             background: var(--ink);
             color: var(--text-i-dim);
@@ -1509,7 +1487,7 @@
             <div class="ph ph-4-5 masked reveal-r parallax" data-speed="0.08"><img src="https://i.ibb.co/bYsTF9c/1002184228.webp" alt="Editorial portrait" loading="lazy" /><span class="tag">Editorial — swap in</span></div>
         </section>
 
-        <!-- JOURNEY timeline (fixed) -->
+        <!-- JOURNEY timeline -->
         <section id="timeline" class="section" data-chapter="The Journey">
             <div class="wrap">
                 <p class="eyebrow reveal">The Journey</p>
@@ -1546,7 +1524,7 @@
             </div>
         </section>
 
-        <!-- IDENTITY -->
+        <!-- IDENTITY (dark) -->
         <section id="identity">
             <div class="marquee">
                 <span class="word">Designer</span><div class="ph ph-1-1 chip"><img src="https://i.ibb.co/4w9HJZNS/1002184229.jpg" alt="" /></div>
@@ -1583,7 +1561,7 @@
             </div>
         </section>
 
-        <!-- BEHIND THE WORK (fixed) -->
+        <!-- BEHIND THE WORK -->
         <section id="behind" class="section" data-chapter="Behind The Work">
             <div class="wrap">
                 <p class="eyebrow reveal">Behind The Work</p>
@@ -1613,7 +1591,7 @@
             </div>
         </section>
 
-        <!-- BUILDING IN PUBLIC -->
+        <!-- BUILDING IN PUBLIC (dark) -->
         <section id="public-build" class="section" data-chapter="Building In Public">
             <div class="wrap grid">
                 <div class="reveal-l"><p class="eyebrow on-ink">Building In Public</p><h2 style="margin-top:16px;">I'm still becoming.</h2><p class="themes">School · Design · Content · Life<br />Community · Experiments · Wins</p></div>
@@ -1691,7 +1669,7 @@
             </div>
         </section>
 
-        <!-- FINAL CTA -->
+        <!-- FINAL CTA (dark) -->
         <section id="contact" data-chapter="Contact">
             <div id="final"><div class="grid">
                     <div class="copy reveal-l"><p class="eyebrow on-ink">Let's Make Something</p><h2>Keep<br />Becoming.</h2><p class="sub">Have an idea? Let's create something. Follow the journey while you're at it.</p><div class="social-row"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a><a href="#">Behance</a></div></div>
@@ -1714,7 +1692,7 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', () => requestAnimationFrame(() => document.getElementById('hero').classList.add(
-        'loaded')));
+            'loaded')));
 
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -1741,7 +1719,7 @@
                     const eased = 1 - Math.pow(1 - p, 3);
                     const val = Math.round(target * eased);
                     e.target.textContent = (val >= 1000 ? Math.floor(val / 1000) : val) + (val >= 1000 ? suffix :
-                    '+');
+                        '+');
                     if (p < 1) requestAnimationFrame(tick);
                 }
                 requestAnimationFrame(tick);
